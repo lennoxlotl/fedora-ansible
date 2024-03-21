@@ -1,9 +1,9 @@
 - name: Configure shell to use adw-gtk3
   dconf:
-    name: "org.gnome.shell.desktop.interface"
+    key: "org.gnome.shell.desktop.interface"
     value: "['gtk-theme', 'adw-gtk3-dark']"
 
 - name: Configure shell to use dark mode
   dconf:
-    name: "org.gnome.shell.desktop.interface"
+    key: "org.gnome.shell.desktop.interface"
     value: "['color-scheme', 'prefer-dark']"
