@@ -29,7 +29,7 @@
 
 - name: Use zsh as default shell
   expect:
-    command: "chsh -s $(which zsh)"
+    command: "chsh -s /usr/bin/zsh"
     responses:
       (?i)password: "{{ user_password }}"
     creates: ".shell_is_zsh"
