@@ -90,7 +90,7 @@
       - pipewire-alsa
     state: latest
 
-- name: Install desktop portals 
+- name: Install desktop portals
   dnf:
     name:
       - xdg-desktop-portal-hyprland
@@ -118,3 +118,40 @@
 - name: Install nvm
   become: false
   shell: wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+- name: Check if cargo is installed
+  become: false
+  shell: command -v cargo
+  register: cargo_exists
+  ignore_errors: yes
+
+- name: Download Rust installer
+  become: false
+  when: cargo_exists is failed
+  get_url:
+    url: https://sh.rustup.rs
+    dest: /tmp/sh.rustup.rs
+    mode: "0755"
+    force: "yes"
+  tags:
+    - rust
+
+- name: Install rust
+  become: false
+  when: cargo_exists is failed
+  shell: /tmp/sh.rustup.rs -y
+  tags:
+    - rust
+
+- name: Clone wpaperd
+  become: false
+  git:
+    repo: https://github.com/danyspin97/wpaperd
+    dest: /tmp/wpaperd
+
+- name: Build wpaperd
+  become: false
+  shell: |
+    cd /tmp/wpaperd
+    cargo build --release
+    cargo install --path="./daemon" && cargo install --path="./cli"
