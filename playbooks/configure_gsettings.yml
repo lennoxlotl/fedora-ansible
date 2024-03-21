@@ -5,4 +5,5 @@
     dest: /etc/dconf/db/local.d
 
 - name: Update dconf
+  become: true
   shell: dconf update
