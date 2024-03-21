@@ -6,4 +6,4 @@
 - name: Install vesktop
   community.general.flatpak:
     name: dev.vencord.Vesktop
-    state: latest
+    state: present
