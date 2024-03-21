@@ -11,7 +11,7 @@
 - name: Import Visual Studio Code repository keys
   rpm_key:
     key: https://packages.microsoft.com/keys/microsoft.asc
-    state: latest
+    state: present
 
 - name: Install Visual Studio Code RHEL repository
   shell: |
