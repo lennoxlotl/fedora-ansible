@@ -21,7 +21,9 @@
 
 - name: Build wpaperd
   become: false
+  # We need to make sure the cargo env is loaded in this unique case
   shell: |
+    . "$HOME/cargo/env"
     cd /tmp/wpaperd
     cargo build --release
     cargo install --path="./daemon" && cargo install --path="./cli"
