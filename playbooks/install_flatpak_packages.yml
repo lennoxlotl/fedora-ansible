@@ -14,7 +14,7 @@
     name: dev.vencord.Vesktop
     state: present
 
-- name: Install Discord Canary
+- name: Install discord canary
   community.general.flatpak:
     name: com.discordapp.DiscordCanary
     remote: flathub-beta

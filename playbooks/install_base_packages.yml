@@ -8,12 +8,12 @@
     name: chromium
     state: latest
 
-- name: Import Visual Studio Code repository keys
+- name: Import visual studio code repository keys
   rpm_key:
     key: https://packages.microsoft.com/keys/microsoft.asc
     state: present
 
-- name: Install Visual Studio Code RHEL repository
+- name: Install visual studio code repository
   yum_repository:
     name: Visual Studio Code
     description: Visual Studio Code Repository
@@ -22,7 +22,7 @@
     gpgcheck: 1
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
 
-- name: Install Visual Studio Code
+- name: Install visual studio code
   dnf:
     name: code
     state: latest
