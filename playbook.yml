@@ -16,4 +16,4 @@
     # Configure everything next
     - name: Configure gsettings
       become: true
-      import_tasks: "playbooks/packages/configure_gsettings.yml"
+      import_tasks: "playbooks/configure_gsettings.yml"
