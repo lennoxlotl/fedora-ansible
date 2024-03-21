@@ -26,3 +26,7 @@
   copy:
     src: dotfiles/.zshrc
     dest: ~/.zshrc
+
+- name: Use zsh as default shell
+  command:
+    cmd: chsh -s $(which zsh)
