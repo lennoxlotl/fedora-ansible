@@ -8,6 +8,11 @@
     name: adw-gtk3-theme
     state: latest
 
+- name: Install gnome tweaks
+  dnf:
+    name: gnome-tweaks
+    state: latest
+
 - name: Install chromium browser
   dnf:
     name: chromium
