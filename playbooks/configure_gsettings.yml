@@ -1,5 +1,6 @@
 # Yes you could normall use dconf to do this, there seems to be some issue with it unfortunately.
 - name: Apply custom gsettings configuration
+  become: true
   template:
     src: 01-settings
     dest: /etc/dconf/db/local.d
