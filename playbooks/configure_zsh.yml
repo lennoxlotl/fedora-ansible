@@ -4,6 +4,7 @@
     dest: /tmp/pokemon-colorscripts
 
 - name: Install pokemon-colorscripts
+  become: true
   shell: /tmp/pokemon-colorscripts/install.sh
 
 - name: Install oh my zsh
