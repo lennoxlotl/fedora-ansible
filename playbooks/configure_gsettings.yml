@@ -1,7 +1,8 @@
 # Yes you could normall use dconf to do this, there seems to be some issue with it unfortunately.
 - name: Apply custom gsettings configuration
   template:
-    src: dconf-settings
-    path: /etc/dconf
+    src: edit-dconf-settings
+    est: /etc/dconf
+
 - name: Update dconf
   shell: dconf update
