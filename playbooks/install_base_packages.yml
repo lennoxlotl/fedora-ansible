@@ -17,3 +17,14 @@
   dnf:
     name: code
     state: latest
+
+- name: Enable lazygit copr
+  copr:
+    state: enabled
+    host: copr.fedorainfracloud.org
+    name: atim/lazygit
+
+- name: Install lazygit
+  dnf:
+    name: lazygit
+    state: latest
