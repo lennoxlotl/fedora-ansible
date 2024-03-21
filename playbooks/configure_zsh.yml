@@ -9,7 +9,7 @@
 
 - name: Install oh my zsh
   command:
-    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    cmd: sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # We should maybe backup the old zsh file, for me personally this is not needed
 - name: Delete old zsh dotfile (if present)
