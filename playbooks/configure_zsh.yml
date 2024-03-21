@@ -28,4 +28,12 @@
     dest: ~/.zshrc
 
 - name: Use zsh as default shell
-  shell: chsh -s $(which zsh)
+  become: false
+  vars:
+    home_user: "{{ ansible_user_id }}"
+  tasks:
+    - name: Change the shell
+      become: true
+      user:
+        name: "{{ home_user }}"
+        shell: /usr/bin/zsh
