@@ -7,8 +7,6 @@
   shell: /tmp/pokemon-colorscripts/install.sh
 
 - name: Install oh my zsh
-  become: true
-  become_user: "{{ whoami }}"
   command:
     cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 

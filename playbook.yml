@@ -3,11 +3,6 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Get the username of the runner
-      become: false
-      command: whoami
-      changed_when: false
-      register: whoami
     # Install all required packages and libraries first
     - name: Install and update packages
       become: true
@@ -22,6 +17,4 @@
     - name: Configure gsettings
       import_tasks: "playbooks/configure_gsettings.yml"
     - name: Configure zsh
-      become: true
-      become_user: "{{ whoami.stdout }}"
       import_tasks: "playbooks/configure_zsh.yml"
