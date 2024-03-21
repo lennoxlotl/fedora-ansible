@@ -1,8 +1,7 @@
 # Yes you could normall use dconf to do this, there seems to be some issue with it unfortunately.
-- name: Configure shell to use adw-gtk3
-  command: 
-    cmd: gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-
-- name: Configure shell to use dark mode
-  command: 
-    cmd: gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+- name: Apply custom gsettings configuration
+  template:
+    src: dconf-settings
+    path: /etc/dconf
+- name: Update dconf
+  shell: dconf update
