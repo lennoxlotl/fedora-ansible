@@ -12,6 +12,8 @@
     dest: /tmp/omz.sh
 
 - name: Install oh my zsh
+  become: true
+  become_user: "{{ whoami }}"
   shell: |
     chmod +x /tmp/omz.sh
     /tmp/omz.sh
