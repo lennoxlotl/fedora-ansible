@@ -6,20 +6,11 @@
 - name: Install pokemon-colorscripts
   shell: /tmp/pokemon-colorscripts/install.sh
 
-- name: Download oh my zsh
-  get_url:
-    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-    dest: /tmp/omz.sh
-
-- name: Make oh my zsh executable
-  become: true
-  become_user: root
-  shell: chmod +x /tmp/omz.sh
-
 - name: Install oh my zsh
   become: true
   become_user: "{{ whoami }}"
-  shell: /tmp/omz.sh
+  command:
+    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # We should maybe backup the old zsh file, for me personally this is not needed
 - name: Delete old zsh dotfile (if present)
