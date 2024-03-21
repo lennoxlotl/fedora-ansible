@@ -3,6 +3,11 @@
     name: "*"
     state: latest
 
+- name: Install adw-gtk3-theme (rpm)
+  dnf:
+    name: adw-gtk3-theme
+    state: latest
+
 - name: Install chromium browser
   dnf:
     name: chromium
