@@ -1,0 +1,11 @@
+- name: Install rpmfusion repositories
+  dnf:
+    name:
+      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
+      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
+    state: latest
+
+- name: Install steam
+  dnf:
+    name: steam
+    state: latest

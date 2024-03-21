@@ -6,3 +6,6 @@
     - name: Install and update packages
       become: true
       import_tasks: "playbooks/install_base_packages.yml"
+    - name: Install and update rpm fusion packages
+      become: true
+      import_tasks: "playbooks/install_rpm_fusion_packages.yml"
