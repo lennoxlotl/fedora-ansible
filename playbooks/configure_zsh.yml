@@ -7,8 +7,14 @@
   become: true
   shell: /tmp/pokemon-colorscripts/install.sh
 
+- name: Check if oh my zsh exists
+  stat:
+    path: ~/.oh-my-zsh
+  register: omz_installed
+
 - name: Install oh my zsh
   shell: sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+  when: omz_installed.stat.exists == False
 
 # We should maybe backup the old zsh file, for me personally this is not needed
 - name: Delete old zsh dotfile (if present)
@@ -22,5 +28,4 @@
     dest: ~/.zshrc
 
 - name: Use zsh as default shell
-  command:
-    cmd: chsh -s $(which zsh)
+  shell: chsh -s $(which zsh)
