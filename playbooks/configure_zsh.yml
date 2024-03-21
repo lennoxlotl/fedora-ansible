@@ -13,6 +13,7 @@
 
 - name: Make oh my zsh executable
   become: true
+  become_user: root
   shell: chmod +x /tmp/omz.sh
 
 - name: Install oh my zsh
