@@ -47,3 +47,39 @@
   dnf:
     name: lazygit
     state: latest
+
+- name: Enable hyprland copr
+  community.general.copr:
+    state: enabled
+    host: copr.fedorainfracloud.org
+    name: solopasha/hyprland
+
+- name: Install hyprland
+  dnf:
+    name: hyprland-git
+    state: latest
+
+- name: Install zsh
+  dnf:
+    name:
+      - zsh
+      - util-linux
+    state: latest
+
+- name: Enable starship copr
+  community.general.copr:
+    state: enabled
+    host: copr.fedorainfracloud.org
+    name: atim/starship
+
+- name: Install starship
+  dnf:
+    name: starship
+    state: latest
+
+- name: Download nvm install script
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh dest=/tmp/nvm_install.sh
+
+- name: Install nvm
+  shell: /tmp/nvm_install.sh

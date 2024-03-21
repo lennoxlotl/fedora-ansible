@@ -16,3 +16,5 @@
     # Configure everything next
     - name: Configure gsettings
       import_tasks: "playbooks/configure_gsettings.yml"
+    - name: Configure zsh
+      import_tasks: "playbooks/configure_zsh.yml"

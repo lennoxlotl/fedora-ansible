@@ -1,0 +1,25 @@
+- name: Download pokemon-colorscripts (temp)
+  git:
+    repo: "https://gitlab.com/phoneybadger/pokemon-colorscripts.git"
+    dest: /tmp/pokemon-colorscripts
+
+- name: Install pokemon-colorscripts
+  shell: /tmp/pokemon-colorscripts/install.sh
+
+- name: Download oh my zsh
+  get_url:
+    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh dest=/tmp/omz.sh
+
+- name: Install oh my zsh
+  shell: /tmp/omz.sh
+
+# We should maybe backup the old zsh file, for me personally this is not needed
+- name: Delete old zsh dotfile (if present)
+  file:
+    path: ~/.zshrc
+    state: absent
+
+- name: Install zsh dotfile
+  copy:
+    src: dotfiles/.zshrc
+    dest: ~/.zshrc
