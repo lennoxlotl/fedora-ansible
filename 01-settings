@@ -1,3 +1,4 @@
 [org/gnome/desktop/interface]
-gtk-theme='Adw-gtk3-dark'
+
+gtk-theme='adw-gtk3-dark'
 color-scheme='prefer-dark'
