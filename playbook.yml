@@ -17,4 +17,6 @@
     - name: Configure gsettings
       import_tasks: "playbooks/configure_gsettings.yml"
     - name: Configure zsh
+      become: true
+      become_user: "{{ user }}"
       import_tasks: "playbooks/configure_zsh.yml"
