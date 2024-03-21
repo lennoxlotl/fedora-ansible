@@ -1,22 +1,23 @@
 - name: Update dnf packages
   dnf:
     name: "*"
-    state: latest
+    state: present
 
 - name: Install chromium browser
   dnf:
     name: chromium
-    state: latest
+    state: present
 
 - name: Install Visual Studio Code RHEL repository
   shell: |
     rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+  state: present
 
 - name: Install Visual Studio Code
   dnf:
     name: code
-    state: latest
+    state: present
 
 - name: Enable lazygit copr
   community.general.copr:
@@ -27,4 +28,4 @@
 - name: Install lazygit
   dnf:
     name: lazygit
-    state: latest
+    state: present
