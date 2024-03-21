@@ -11,12 +11,14 @@
     url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
     dest: /tmp/omz.sh
 
+- name: Make oh my zsh executable
+  become: true
+  shell: chmod +x /tmp/omz.sh
+
 - name: Install oh my zsh
   become: true
   become_user: "{{ whoami }}"
-  shell: |
-    chmod +x /tmp/omz.sh
-    /tmp/omz.sh
+  shell: /tmp/omz.sh
 
 # We should maybe backup the old zsh file, for me personally this is not needed
 - name: Delete old zsh dotfile (if present)
