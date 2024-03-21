@@ -77,12 +77,6 @@
     name: starship
     state: latest
 
-- name: Download nvm install script
-  get_url:
-    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh
-    dest: /tmp/nvm_install.sh
-
 - name: Install nvm
-  shell: |
-    chmod +x /tmp/nvm_install.sh
-    /tmp/nvm_install.sh
+  become: false
+  shell: wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
