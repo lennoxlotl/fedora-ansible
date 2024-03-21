@@ -23,7 +23,7 @@
   become: false
   # We need to make sure the cargo env is loaded in this unique case
   shell: |
-    . "$HOME/cargo/env"
+    . "$HOME/.cargo/env"
     cd /tmp/wpaperd
-    ~/.cargo/bin/cargo build --release
-    ~/.cargo/bin/cargo install --path="./daemon" && cargo install --path="./cli"
+    cargo build --release
+    cargo install --path="./daemon" && cargo install --path="./cli"

@@ -18,7 +18,7 @@ source $ZSH/oh-my-zsh.sh
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
 pokemon-colorscripts --no-title -s -r
 
-. "$HOME/cargo/env"
+. "$HOME/.cargo/env"
 
 eval "$(starship init zsh)"
 
