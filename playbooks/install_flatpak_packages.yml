@@ -3,6 +3,12 @@
     name: flatpak
     state: latest
 
+- name: Add flathub beta remote
+  community.general.flatpak_remote:
+    name: flathub-beta
+    state: present
+    flatpakrepo_url: https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+
 - name: Install vesktop
   community.general.flatpak:
     name: dev.vencord.Vesktop
