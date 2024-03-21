@@ -15,5 +15,4 @@
       import_tasks: "playbooks/packages/install_flatpak_packages.yml"
     # Configure everything next
     - name: Configure gsettings
-      become: true
       import_tasks: "playbooks/configure_gsettings.yml"
