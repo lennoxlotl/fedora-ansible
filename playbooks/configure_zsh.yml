@@ -8,7 +8,8 @@
 
 - name: Download oh my zsh
   get_url:
-    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh dest=/tmp/omz.sh
+    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: /tmp/omz.sh
 
 - name: Install oh my zsh
   shell: /tmp/omz.sh

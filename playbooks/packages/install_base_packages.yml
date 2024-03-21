@@ -79,7 +79,8 @@
 
 - name: Download nvm install script
   get_url:
-    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh dest=/tmp/nvm_install.sh
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh
+    dest: /tmp/nvm_install.sh
 
 - name: Install nvm
   shell: /tmp/nvm_install.sh
