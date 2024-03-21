@@ -1,0 +1,8 @@
+---
+- name: Fedora
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Install and update packages
+      become: true
+      import_tasks: "playbooks/install_base_packages.yml"
