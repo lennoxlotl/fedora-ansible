@@ -142,16 +142,3 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
-
-- name: Clone wpaperd
-  become: false
-  git:
-    repo: https://github.com/danyspin97/wpaperd
-    dest: /tmp/wpaperd
-
-- name: Build wpaperd
-  become: false
-  shell: |
-    cd /tmp/wpaperd
-    cargo build --release
-    cargo install --path="./daemon" && cargo install --path="./cli"

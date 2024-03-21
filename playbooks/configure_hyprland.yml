@@ -12,3 +12,16 @@
   shell: |
     mkdir -p ~/.local/share/fonts
     cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFont-Regular.ttf
+
+- name: Clone wpaperd
+  become: false
+  git:
+    repo: https://github.com/danyspin97/wpaperd
+    dest: /tmp/wpaperd
+
+- name: Build wpaperd
+  become: false
+  shell: |
+    cd /tmp/wpaperd
+    cargo build --release
+    cargo install --path="./daemon" && cargo install --path="./cli"
