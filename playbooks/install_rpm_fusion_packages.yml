@@ -1,9 +1,10 @@
 - name: Install rpmfusion keys
   rpm_key:
-    key: 
-      - "https://rpmfusion.org/keys?action=AttachFile&do=view&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020"
-      - "https://rpmfusion.org/keys?action=AttachFile&do=view&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020"
+    key: "{{ item }}"
     state: present
+  with_items:
+    - "https://rpmfusion.org/keys?action=AttachFile&do=view&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020"
+    - "https://rpmfusion.org/keys?action=AttachFile&do=view&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020"
 
 - name: Install rpmfusion repositories
   dnf:
