@@ -19,7 +19,7 @@
     state: latest
 
 - name: Enable lazygit copr
-  copr:
+  community.general.copr:
     state: enabled
     host: copr.fedorainfracloud.org
     name: atim/lazygit
