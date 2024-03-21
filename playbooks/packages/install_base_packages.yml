@@ -54,6 +54,12 @@
     host: copr.fedorainfracloud.org
     name: solopasha/hyprland
 
+- name: Enable SwayNotificationCenter copr
+  community.general.copr:
+    state: enabled
+    host: copr.fedorainfracloud.org
+    name: erikreider/SwayNotificationCenter
+
 - name: Install hyprland
   dnf:
     name:
@@ -66,7 +72,6 @@
       - kitty
       - xdg-utils
       - xdg-user-dirs
-      - brightness-ctl
       - python3-requests
       - python3-pip
       - curl
@@ -80,7 +85,6 @@
       - qt6ct
       - qt5ct
       - qt6-qtsvg
-      - wpaperd
       - pamixer
       - pavucontrol
       - pipewire-alsa

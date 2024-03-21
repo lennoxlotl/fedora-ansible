@@ -5,7 +5,7 @@
   vars_prompt:
     - name: "user_password"
       prompt: "Enter user password"
-      private: yes
+      private: true
   tasks:
     # Install all required packages and libraries first
     - name: Install and update packages
