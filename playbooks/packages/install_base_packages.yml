@@ -56,7 +56,41 @@
 
 - name: Install hyprland
   dnf:
-    name: hyprland-git
+    name:
+      - hyprland-git
+      - waybar
+      - rofi-wayland
+      - playerctl
+      - openssl
+      - network-manager-applet
+      - kitty
+      - xdg-utils
+      - xdg-user-dirs
+      - brightness-ctl
+      - python3-requests
+      - python3-pip
+      - curl
+      - SwayNotificationCenter
+      - swayidle
+      - wl-clipboard
+      - wlogout
+      - yad
+      - swappy
+      - slurp
+      - qt6ct
+      - qt5ct
+      - qt6-qtsvg
+      - wpaperd
+      - pamixer
+      - pavucontrol
+      - pipewire-alsa
+    state: latest
+
+- name: Install desktop portals 
+  dnf:
+    name:
+      - xdg-desktop-portal-hyprland
+      - xdg-desktop-portal-gtk
     state: latest
 
 - name: Install zsh
