@@ -83,4 +83,6 @@
     dest: /tmp/nvm_install.sh
 
 - name: Install nvm
-  shell: /tmp/nvm_install.sh
+  shell: |
+    chmod +x /tmp/nvm_install.sh
+    /tmp/nvm_install.sh
