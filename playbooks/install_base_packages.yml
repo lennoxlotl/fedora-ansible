@@ -1,17 +1,17 @@
 - name: Update dnf packages
   dnf:
     name: "*"
-    state: present
+    state: latest
 
 - name: Install chromium browser
   dnf:
     name: chromium
-    state: present
+    state: latest
 
 - name: Import Visual Studio Code repository keys
   rpm_key:
     key: https://packages.microsoft.com/keys/microsoft.asc
-    state: present
+    state: latest
 
 - name: Install Visual Studio Code RHEL repository
   shell: |
@@ -20,7 +20,7 @@
 - name: Install Visual Studio Code
   dnf:
     name: code
-    state: present
+    state: latest
 
 - name: Enable lazygit copr
   community.general.copr:
@@ -31,4 +31,4 @@
 - name: Install lazygit
   dnf:
     name: lazygit
-    state: present
+    state: latest
