@@ -25,7 +25,7 @@
 
 - name: Install visual studio code repository
   yum_repository:
-    name: Visual Studio Code
+    name: vscode
     description: Visual Studio Code Repository
     baseurl: https://packages.microsoft.com/yumrepos/vscode
     enabled: 1
