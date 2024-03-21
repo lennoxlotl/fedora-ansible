@@ -16,6 +16,7 @@
 - name: Install Visual Studio Code RHEL repository
   yum_repository:
     name: Visual Studio Code
+    description: Visual Studio Code Repository
     baseurl: https://packages.microsoft.com/yumrepos/vscode
     enabled: 1
     gpgcheck: 1
