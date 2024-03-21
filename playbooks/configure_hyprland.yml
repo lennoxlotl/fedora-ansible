@@ -11,7 +11,8 @@
 - name: Install Jetbrains Mono Nerdfont
   shell: |
     mkdir -p ~/.fonts
-    cd ~/.fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFont-Regular.ttf
+    mkdir -p ~/.fonts/JetBrainsMonoNerd
+    cd ~/.fonts/JetBrainsMonoNerd && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFont-Regular.ttf
 
 - name: Clone wpaperd
   become: false
