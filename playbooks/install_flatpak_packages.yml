@@ -1,0 +1,9 @@
+- name: Install flatpak
+  dnf:
+    name: flatpak
+    state: latest
+
+- name: Install vesktop
+  community.general.flatpak:
+    name: dev.vencord.Vesktop
+    state: latest
