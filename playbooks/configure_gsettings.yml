@@ -1,9 +1,6 @@
+# Yes you could normall use dconf to do this, there seems to be some issue with it unfortunately.
 - name: Configure shell to use adw-gtk3
-  dconf:
-    key: "org.gnome.shell.desktop.interface"
-    value: "['gtk-theme', 'adw-gtk3-dark']"
+  shell: gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 
 - name: Configure shell to use dark mode
-  dconf:
-    key: "org.gnome.shell.desktop.interface"
-    value: "['color-scheme', 'prefer-dark']"
+  shell: gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
