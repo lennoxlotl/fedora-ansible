@@ -2,7 +2,7 @@
 - name: Apply custom gsettings configuration
   template:
     src: edit-dconf-settings
-    est: /etc/dconf
+    dest: /etc/dconf
 
 - name: Update dconf
   shell: dconf update
