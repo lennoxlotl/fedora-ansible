@@ -25,5 +25,5 @@
   shell: |
     . "$HOME/cargo/env"
     cd /tmp/wpaperd
-    cargo build --release
-    cargo install --path="./daemon" && cargo install --path="./cli"
+    ~/.cargo/bin/cargo build --release
+    ~/.cargo/bin/cargo install --path="./daemon" && cargo install --path="./cli"
