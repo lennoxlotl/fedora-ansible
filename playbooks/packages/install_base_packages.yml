@@ -147,10 +147,11 @@
   dnf: 
     name:
       - "@development-tools"
-      - "openssl-devel"
-      - "gcc"
-      - "g++"
-      - "wayland-devel"
-      - "egl-wayland-devel"
-      - "libxkbcommon-devel"
+      - openssl-devel
+      - gcc
+      - g++
+      - wayland-devel
+      - egl-wayland-devel
+      - libxkbcommon-devel
+      - mesa-libEGL-devel
     state: latest
