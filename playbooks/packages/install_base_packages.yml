@@ -142,3 +142,12 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
+
+- name: Install development tools
+  dnf: 
+    name:
+      - "@development-tools"
+      - "openssl-devel"
+      - "gcc"
+      - "g++"
+    state: latest
