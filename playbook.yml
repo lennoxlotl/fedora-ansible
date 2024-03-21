@@ -22,3 +22,5 @@
       import_tasks: "playbooks/configure_gsettings.yml"
     - name: Configure zsh
       import_tasks: "playbooks/configure_zsh.yml"
+    - name: Configure hyprland
+      import_tasks: "playbooks/configure_hyprland.yml"

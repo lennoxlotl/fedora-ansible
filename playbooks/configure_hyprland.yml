@@ -1,0 +1,9 @@
+- name: Copy wallpapers
+  copy:
+    src: dotfiles/Wallpapers
+    dest: ~/Pictures
+
+- name: Copy .config
+  copy:
+    src: dotfiles/.config
+    dest: ~/
