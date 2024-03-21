@@ -2,6 +2,10 @@
 - name: Fedora
   hosts: localhost
   connection: local
+  vars_prompt:
+    - name: "user_password"
+      prompt: "Enter user password"
+      private: yes
   tasks:
     # Install all required packages and libraries first
     - name: Install and update packages
