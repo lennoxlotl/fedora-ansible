@@ -150,4 +150,7 @@
       - "openssl-devel"
       - "gcc"
       - "g++"
+      - "wayland-devel"
+      - "egl-wayland-devel"
+      - "libxkbcommon-devel"
     state: latest
