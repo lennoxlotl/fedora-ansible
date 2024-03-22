@@ -155,3 +155,20 @@
       - libxkbcommon-devel
       - mesa-libEGL-devel
     state: latest
+
+- name: Download jetbrains toolbox
+  become: false
+  get_url:
+    url: https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.2.3.20090.tar.gz
+    dest: /tmp/jetbrains-toolbox.tar.gz
+
+- name: Extract jetbrains toolbox
+  become: false
+  unarchive:
+    src: /tmp/jetbrains-toolbox.tar.gz
+    dest: /tmp
+    remote_src: yes
+
+- name: Install jetbrains toolbox
+  become: false
+  shell: /tmp/jetbrains-toolbox-*/jetbrains-toolbox
