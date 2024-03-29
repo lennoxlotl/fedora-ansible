@@ -183,3 +183,8 @@
     dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
     dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
     dnf install libva-utils -y
+
+- name: Install flameshot
+  dnf:
+    name: flameshot
+    state: latest
