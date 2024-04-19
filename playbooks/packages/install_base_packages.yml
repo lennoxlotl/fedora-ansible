@@ -64,7 +64,7 @@
   dnf:
     name:
       - hyprland-git
-      - waybar
+      - ags
       - rofi-wayland
       - playerctl
       - openssl
@@ -142,6 +142,18 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
+
+- name: Check if bun is installed
+  become: false
+  shell: command -v bun
+  register: bun_exists
+  ignore_errors: true
+
+- name: Install bun
+  become: false
+  shell: curl -fsSL https://bun.sh/install | bash
+  tags:
+    - bun
 
 - name: Install development tools
   dnf: 
