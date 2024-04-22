@@ -12,4 +12,4 @@ Keep in mind this is configured to fit my specific system, especially the hyprla
     - Do NOT run this file as `sudo` or `root`
 
 ## License
-This project is licensed under MIT
+This project is licensed under WTFPL
